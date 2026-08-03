@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#5865f2" />
+  <title>こころの記録 | CBTノート</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="print.css" />
+</head>
+<body>
+  <div id="app" class="app-shell" aria-live="polite"></div>
+  <template id="onboarding-template">
+    <main class="auth-page"><section class="auth-card">
+      <div class="brand-mark">○</div><p class="eyebrow">PRIVATE CBT JOURNAL</p>
+      <h1>こころの記録</h1><p class="lead">認知行動療法（CBT）のための、あなた専用の安全なノートです。</p>
+      <form id="setup-form" class="stack"><label>6文字以上のパスコード<input id="setup-pin" type="password" minlength="6" autocomplete="new-password" required></label><label>パスコードを確認<input id="setup-pin-confirm" type="password" minlength="6" autocomplete="new-password" required></label><p class="hint">記録はこの端末内に暗号化して保存されます。パスコードを忘れると復元できません。</p><button class="primary" type="submit">はじめる</button></form>
+    </section></main>
+  </template>
+  <template id="unlock-template">
+    <main class="auth-page"><section class="auth-card"><div class="brand-mark">○</div><p class="eyebrow">CBT JOURNAL</p><h1>おかえりなさい</h1><p class="lead">パスコードを入力して、記録を開きます。</p><form id="unlock-form" class="stack"><label>パスコード<input id="unlock-pin" type="password" autocomplete="current-password" required autofocus></label><p id="unlock-error" class="error" hidden>パスコードが違います。</p><button class="primary" type="submit">ロックを解除</button></form></section></main>
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
